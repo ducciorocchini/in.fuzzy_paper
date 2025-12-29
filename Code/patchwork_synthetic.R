@@ -3,11 +3,13 @@
 
 library(patchwork)
 
-# Output from synthetic_bands.R
-p_runtime
-
 # Output from synthetic_size.R
-p_scale_runtime
+p_runtime_size
 
-p_runtime + p_scale_runtime
+# Output from synthetic_bands.R
+p_runtime_bands
+
+p_runtime_size + p_runtime_bands 
+# + plot_annotation(tag_levels = "A)") 
+# plot_annotation() can be used to put labels A) and B) to plots, but in this case it might be misleading due to the number of bands called B
  
