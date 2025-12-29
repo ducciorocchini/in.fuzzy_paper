@@ -86,7 +86,7 @@ fit <- lm(runtime_sec ~ B, data = results_B)
 print(summary(fit))
 
 # ---- plot runtime vs bands ----
-p_runtime <- ggplot(results_B, aes(B, runtime_sec)) +
+p_runtime_bands <- ggplot(results_B, aes(B, runtime_sec)) +
   geom_line(linewidth = 1, col = "green") +
   geom_point(size = 2.5, col = "green") +
   geom_smooth(method = "lm", se = TRUE, linewidth = 0.9, col = "cyan1") +
@@ -98,5 +98,5 @@ p_runtime <- ggplot(results_B, aes(B, runtime_sec)) +
   ) +
   theme_minimal(base_size = 14)
 
-print(p_runtime)
+print(p_runtime_bands)
 
