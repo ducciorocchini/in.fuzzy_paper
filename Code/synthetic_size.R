@@ -1,5 +1,4 @@
 
-```r
 # --- Packages ---------------------------------------------------------------
 library(terra)
 library(imageRy)   # contains im.fuzzy()
@@ -80,14 +79,18 @@ for (i in seq_along(sizes)) {
 print(results)
 
 # --- Simple scaling plot ------------------------------------------
-ggplot(results, aes(x = N, y = runtime_sec)) +
-  geom_line(color = "#2c7fb8", linewidth = 1) +
-  geom_point(color = "#2c7fb8", size = 3) +
+p_scale_runtime <- ggplot(results, aes(x = N, y = runtime_sec)) +
+  geom_line(linewidth = 1, col = "green") +
+  geom_point(size = 3, col = "green") +
+  geom_smooth(method = "lm", se = TRUE, linewidth = 0.9, col = "cyan1") +
   labs(
     title = "Scaling with image size",
+    subtitle = "Varying number of pixels, Fixed number of bands = 4",
     x = "Number of pixels (N)",
     y = "Runtime (seconds)"
   ) +
   theme_minimal(base_size = 14)
 
-```
+print(p_scale_runtime)
+
+
