@@ -100,21 +100,3 @@ p_runtime <- ggplot(results_B, aes(B, runtime_sec)) +
 
 print(p_runtime)
 
-# ---- plot output memory vs bands ----
-p_mem <- ggplot(results_B, aes(B, output_MB)) +
-  geom_line(linewidth = 1, col = "green") +
-  geom_point(size = 2.5, col = "green") +
-  geom_smooth(method = "lm", se = TRUE, linewidth = 0.9, col = "cyan1") +
-  labs(
-    title = "Output memory footprint vs spectral dimensionality",
-    subtitle = "Memory dominated by K output rasters (distances + memberships), not by input band count",
-    x = "Number of bands (B)",
-    y = "Approx. output size (MB)"
-  ) +
-  theme_minimal(base_size = 14)
-
-print(p_mem)
-
-# Optional: save plots
-# ggsave("runtime_vs_bands.pdf", p_runtime, width = 7, height = 4)
-# ggsave("memory_vs_bands.pdf", p_mem, width = 7, height = 4)
