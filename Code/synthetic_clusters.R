@@ -18,7 +18,7 @@ cluster_scaling_experiment <- function(
   n = 500,          # 500 x 500 = 250k pixels
   B = 4,
   m = 2,
-  seed = 1
+  seed = 100
 ) {
 
   img <- make_synthetic_raster(n = n, B = B, seed = seed)
@@ -68,7 +68,7 @@ results_K <- cluster_scaling_experiment(
   n = 500,
   B = 4,
   m = 2,
-  seed = 1
+  seed = 100
 )
 
 print(results_K)
