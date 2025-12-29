@@ -78,12 +78,16 @@ p_runtime_clusters <- ggplot(results_K, aes(x = K, y = runtime_sec)) +
   geom_line(linewidth = 1, color = "green") +
   geom_point(size = 3, color = "green") +
   geom_smooth(method = "lm", se = TRUE, linewidth = 0.9, color = "cyan1") +
+  scale_x_continuous(
+    breaks = seq(min(results_K$K), max(results_K$K), by = 1)
+  ) +
   labs(
     title = "Runtime vs number of clusters",
-    subtitle = "Fixed image size N = 2.5 × 10⁵ pixels; fixed number of bands B = 4",
+    subtitle = "Fixed image size N = 2.5 × 10⁵ pixels\nFixed number of bands B = 4",
     x = "Number of clusters (K)",
     y = "Runtime (seconds)"
   ) +
   theme_minimal(base_size = 14)
 
 print(p_runtime_clusters)
+
