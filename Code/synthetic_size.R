@@ -85,7 +85,7 @@ p_scale_runtime <- ggplot(results, aes(x = N, y = runtime_sec)) +
   geom_smooth(method = "lm", se = TRUE, linewidth = 0.9, col = "cyan1") +
   labs(
     title = "Scaling with image size",
-    subtitle = "Varying number of pixels, Fixed number of bands = 4",
+    subtitle = "Fixed number of bands B = 4, Varying number of pixels N",
     x = "Number of pixels (N)",
     y = "Runtime (seconds)"
   ) +
